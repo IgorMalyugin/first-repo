@@ -48,3 +48,196 @@ distances = {
 pprint(distances)
 
 
+
+# Есть список песен группы Depeche Mode со временем звучания с точностью до долей минут
+
+violator_songs = [
+    ['World in My Eyes', 4.86],
+    ['Sweetest Perfection', 4.43],
+    ['Personal Jesus', 4.56],
+    ['Halo', 4.9],
+    ['Waiting for the Night', 6.07],
+    ['Enjoy the Silence', 4.20],
+    ['Policy of Truth', 4.76],
+    ['Blue Dress', 4.29],
+    ['Clean', 5.83],
+]
+
+# Распечатайте общее время звучания трех песен: 'Halo', 'Enjoy the Silence' и 'Clean' в формате
+#   Три песни звучат ХХХ.XX минут
+# Точность указывается в функции round(a, b)
+# где a, это число которое надо округлить, а b количество знаков после запятой
+# более подробно про функцию round смотрите в документации https://docs.python.org/3/search.html?q=round
+
+x = 'Три песни звучат '
+y = ' минут'
+halo = violator_songs[3][1]
+Enjoy_the_Silence = violator_songs[5][1]
+Clean = violator_songs[8][1]
+summ_sound = round(halo + Enjoy_the_Silence + Clean)
+
+print(x + str(summ_sound) + y)
+
+# Есть словарь песен группы Yellow со временем звучания с точностью до долей минут
+pocket_universe_songs = {
+    'Solar Driftwood': 1.85,
+    'Celsius': 5.98,
+    'More': 6.65,
+    'On Track': 5.55,
+    'Monolith': 6.35,
+    'To the Sea': 5.77,
+    'Magnetic': 5.88,
+    'Liquid Mountain': 2.97,
+    'Pan Blue': 5.52,
+    'Resistor': 7.22,
+    'Beyond Mirrors': 5.82,
+}
+
+# Распечатайте общее время звучания трех песен: 'On Track', 'To the Sea' и 'Beyond Mirrors'
+#   А другие три песни звучат приблизительно ХХХ минут
+z = 'А другие три песни звучат приблизительно '
+sound = pocket_universe_songs['On Track']
+sound1 = pocket_universe_songs['To the Sea']
+sound2 = pocket_universe_songs['Beyond Mirrors']
+summ = round(sound + sound1 + sound2)
+
+print("А другие три песни звучат приблизительно", summ, "минут")
+
+
+
+# Есть словарь магазинов с распродажами
+
+shops = {
+    'ашан':
+        [
+            {'name': 'печенье', 'price': 10.99},
+            {'name': 'конфеты', 'price': 34.99},
+            {'name': 'карамель', 'price': 45.99},
+            {'name': 'пирожное', 'price': 67.99},
+        ],
+    'пятерочка':
+        [
+            {'name': 'печенье', 'price': 9.99},
+            {'name': 'конфеты', 'price': 32.99},
+            {'name': 'карамель', 'price': 46.99},
+            {'name': 'пирожное', 'price': 59.99},
+        ],
+    'магнит':
+        [
+            {'name': 'печенье', 'price': 11.99},
+            {'name': 'конфеты', 'price': 30.99},
+            {'name': 'карамель', 'price': 41.99},
+            {'name': 'пирожное', 'price': 62.99},
+        ],
+}
+
+# Создайте словарь цен на продкты следующего вида (писать прямо в коде)
+sweets = {
+    'печенье': [
+        {'shop': 'ашан', 'price': 10.99},
+        {'shop': 'пятерочка', 'price': 9.99}],
+    'конфеты': [
+        {'shop': 'пятерочка', 'price': 32.99},
+        {'shop': 'магнит', 'price': 30.99},
+    ],
+    'карамель': [
+        {'shop': 'ашан', 'price': 45.99},
+        {'shop': 'магнит', 'price': 41.99},
+    ],
+    'пирожное': [
+        {'shop': 'пятерочка', 'price': 46.99},
+        {'shop': 'магнит', 'price': 62.99},
+    ]
+}
+print(sweets)
+# Указать надо только по 2 магазина с минимальными ценами
+
+
+# Есть словарь кодов товаров
+
+goods = {
+    'Лампа': '12345',
+    'Стол': '23456',
+    'Диван': '34567',
+    'Стул': '45678',
+}
+
+# Есть словарь списков количества товаров на складе.
+
+store = {
+    '12345': [
+        {'quantity': 27, 'price': 42},
+    ],
+    '23456': [
+        {'quantity': 22, 'price': 510},
+        {'quantity': 32, 'price': 520},
+    ],
+    '34567': [
+        {'quantity': 2, 'price': 1200},
+        {'quantity': 1, 'price': 1150},
+    ],
+    '45678': [
+        {'quantity': 50, 'price': 100},
+        {'quantity': 12, 'price': 95},
+        {'quantity': 43, 'price': 97},
+    ],
+}
+
+# Рассчитать на какую сумму лежит каждого товара на складе
+# например для ламп
+
+lamps_cost = store[goods['Лампа']][0]['quantity'] * store[goods['Лампа']][0]['price']
+lamp_code = goods['Лампа']
+lamps_item = store[lamp_code][0]
+lamps_quantity = lamps_item['quantity']
+lamps_price = lamps_item['price']
+lamps_cost = lamps_quantity * lamps_price
+print('Лампа -', lamps_quantity, 'шт, стоимость', lamps_cost, 'руб')
+
+# Вывести стоимость каждого вида товара на складе:
+# один раз распечать сколько всего столов и их общая стоимость,
+# один раз распечать сколько всего стульев и их общая стоимость,
+#   и т.д. на складе
+# Формат строки <товар> - <кол-во> шт, стоимость <общая стоимость> руб
+
+
+
+table_cod = goods['Стол']
+table_item = store[table_cod][0]
+table_item1 = store[table_cod][1]
+table_quantity = table_item['quantity']
+table_quantity1 = table_item1['quantity']
+table_price = table_item['price']
+table_price1 = table_item1['price']
+table_cost = table_quantity * table_price + table_quantity1 * table_price1
+summ_quantity_table = table_quantity + table_quantity1
+print('Стол -', summ_quantity_table, 'шт, стоимость', table_cost, 'руб')
+
+sofa_cod = goods['Диван']
+sofa_item = store[sofa_cod][0]
+sofa_item1 = store[sofa_cod][1]
+sofa_quantity = sofa_item['quantity']
+sofa_quantity1 = sofa_item1['quantity']
+sofa_price = sofa_item['price']
+sofa_price1 = sofa_item1['price']
+sofa_cost = sofa_quantity * sofa_price + sofa_quantity1 * sofa_price1
+summ_quantity_sofa = sofa_quantity + sofa_quantity1
+print('Диван -', summ_quantity_sofa, 'шт, стоимость', sofa_cost, 'руб')
+
+stool_cod = goods['Стул']
+stool_item = store[stool_cod][0]
+stool_item1 = store[stool_cod][1]
+stool_item2 = store[stool_cod][2]
+stool_quantity = stool_item['quantity']
+stool_quantity1 = stool_item1['quantity']
+stool_quantity2 = stool_item2['quantity']
+stool_price = stool_item['price']
+stool_price1 = stool_item1['price']
+stool_price2 = stool_item2['price']
+stool_cost = stool_price * stool_quantity + stool_price1 * stool_quantity1 + stool_price2 * stool_quantity2
+summ_quantity_stool = stool_quantity + stool_quantity1 + stool_quantity2
+print('Стул -', summ_quantity_stool, 'шт, стоимость', stool_cost, 'руб')
+
+
+
+
